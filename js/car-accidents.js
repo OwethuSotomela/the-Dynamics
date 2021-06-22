@@ -25,7 +25,7 @@ function myFunction() {
  
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchBox");
-    input.value = inputgit.value.toUpperCase();
+    input.value = input.value.toUpperCase();
     filter = input.value.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
