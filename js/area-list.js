@@ -10,7 +10,7 @@ var areaList = [ {
   },
   {
     "Area": "Langa",
-    "Level-1": "500",
+    "Level-1": "250",
     "Level-2": "400",
     "Level-3": "300",
     "Level-4": "700",
