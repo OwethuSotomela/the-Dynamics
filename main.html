@@ -14,13 +14,13 @@
 
     <div class="allData">
         <h2>Cars Accident Tracker During Lockdown Regulations:</h2>
-        <label for="search">Search</label>
-        <input type="text" placeholder="Search..." class="searchBox" id="searchBox">
-        
+        <label for="search">Search:</label>
+        <input type="text" placeholder="Search for areas..." class="searchBox" id="searchBox" onkeyup="myFunction()">
+
         <br>
         <br>
         <br>
-        <table class="table" id="table" style="width:90%">
+        <table class="table" id="myTable" style="width:100%">
                 <thead>
                     <tr>
                         <th>Area</th>
@@ -36,6 +36,8 @@
                 </tbody>
         </table>
         <br>
+       <center><em><tcaptions>2020 data detailing car accidents due to alcohol during different South African lockdown levels.</tcaptions></em></center>
+        <br>
         <div class="chartCovid">
             <canvas id="myChart" ></canvas>
         </div>
@@ -43,6 +45,7 @@
 
     <script src="./js/area-list.js"></script>
     <script src="./js/car-accidents.js"></script>
+
 </body>
 
 </html>
