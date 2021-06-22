@@ -1,0 +1,43 @@
+body {
+    background: url(https://static5.depositphotos.com/1010683/409/i/600/depositphotos_4094073-stock-photo-financial-chart.jpg) no-repeat center/cover;
+    
+}
+
+
+#gsearch{
+width: 45%;
+}
+
+.one{
+    text-align: center;
+}
+
+label{
+    font-size: large;
+}
+
+.searchNav {
+    border: 1px solid white;
+    text-align: center;
+    margin-bottom: 10px;
+    background: white;
+
+}
+
+.fas{
+    font-size:40px;
+    margin-bottom: 3px;
+}
+
+.fab{
+    font-size:40px
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:lightslategray;
+    color: white;
+    text-align: center;
+}
