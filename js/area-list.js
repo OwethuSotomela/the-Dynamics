@@ -27,11 +27,18 @@ var areaList = [ {
   
   }
   ];
-  function list(){
-      return areaList;
-  }
 
+  // var gugx = ["500","400","300","700","250",];
+  function list() {
+    return areaList;
+  }
+  // function gugxList() {
+  //   return gugx;
+  // }
+  
   return{
       list,
+      // gugxList,
   }
+
 }
