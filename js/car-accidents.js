@@ -3,6 +3,7 @@ const areaCount = document.querySelector(".car-accidentCount");
 const searchBoxElement = document.querySelector(".searchBox");
 const bodyElement = document.querySelector(".tableBody");
 
+
 var mainList = theList();
 
 var areaList = mainList.list();
@@ -20,8 +21,60 @@ areaList.forEach(function (printTable) {
 `
 })
 
+
+// The filted list for gugulethu to get its values into its graph
+
+var all = mainList.byarea();
+
+var gug = all.filter(function (el) {
+    return el.Area === "Gugulethu"
+})
+
+var arr1 = [];
+for (let [key, value] of Object.entries(gug[0])) {
+    // console.log(value);
+    if (value != "Gugulethu") {
+        arr1.push(value)
+    }
+
+}
+
+
+// The filted list for langa to get its values into its graph
+
+var langa = all.filter(function (el) {
+    return el.Area === "Langa"
+})
+
+var arr2 = [];
+for (let [key, value] of Object.entries(langa[0])) {
+    // console.log(value);
+    if (value != "Langa") {
+        arr2.push(value)
+    }
+
+}
+
+
+// The filted list for khayelisha to get its values into its graph
+var khaltsha = all.filter(function (el) {
+    return el.Area === "Khayelitsha"
+})
+
+var arr3 = [];
+for (let [key, value] of Object.entries(khaltsha[0])) {
+    // console.log(value);
+    if (value != "Khayelitsha") {
+        arr3.push(value)
+    }
+
+}
+
+
+
+// The filted list for search input by area
 function myFunction() {
- 
+
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchBox");
     input.value = input.value.toUpperCase();
@@ -31,90 +84,32 @@ function myFunction() {
 
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[0];
-        if (td) {`      `
+        if (td) {
+            `      `
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 tr[i].style.display = "";
-            }else{
+            } else {
                 tr[i].style.display = "none";
             }
         }
     }
 }
+searchBoxElement.addEventListener('onkeyup', myFunction);
 
 
-
-
-
-areaList.forEach(function (printTable) {
- 
-
-   console.log(printTable.Level-1)
-    // ${printTable["Level-2"]}
-    // ${printTable["Level-3"]}
-    // ${printTable["Level-4"]}
-    // ${printTable["Level-5"]}
-
-})
-
-
-
-
-
-// var gugList = mainList.gugxList();
-// gugList.forEach(function (printTable) {
-
-// var arr = [];
-
-
- 
-
-// let gugxData = gugList.push(printTable);
-
-//   console.log(gugxData);
-
-
-
-
-
-// });
-
-
-
-// google.charts.load('current',{packages:['corechart']});
-// google.charts.setOnLoadCallback(drawChart);
-
-// function drawChart() {
-//     // Set Data
-//     var data = google.visualization.arrayToDataTable([
-//     //   ['Price', 'Size'],
-//       ['Area', 'Level'],
- 
-//       [50,7],[60,8],[70,8],[80,9],[90,9],[100,9],
-//       [110,10],[120,11],[130,14],[140,14],[150,15]
-//       ]);
-//     // // Set Options
-//     var options = {
-//       title: 'Cape Town Areas VS Car Accident Rates During Lockdown Regulations',
-//       hAxis: {title: 'Lockdown Levels'},
-//       vAxis: {title: 'Car Accident Rates'},
-//       legend: 'none'
-//     };
-    // Draw Chart
-    // var chart = new google.visualization.LineChart(document.getElementById('myChart'));
-    // chart.draw(data, options);                                      
-    // }
+// gugulethu graph
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
 
-        labels: ['${printTable["Level-1"]}', '${printTable["Level-1"]}', '${printTable["Level-1"]}', '${printTable["Level-1"]}', '${printTable["Level-1"]}'],
+        labels: ['1', '2', '3', '4', '5'],
 
         datasets: [{
             label: '# of Gugulethu',
-            data: [10, 19, 3, 5, 2,],
+            data: arr1,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -133,52 +128,8 @@ var myChart = new Chart(ctx, {
             ],
             borderWidth: 1
         },
+        ],
 
-        {
-            label: '# of Langa',
-            data: [18, 9, 2, 10, 20,],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-
-            ],
-            borderWidth: 1
-        },
-
-        {
-            label: '# of Khayelisha',
-            data: [19, 19, 12,40, 25,],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-
-            ],
-            borderWidth: 1
-        }
-    ],
-    
     },
     options: {
         scales: {
@@ -190,4 +141,94 @@ var myChart = new Chart(ctx, {
 });
 
 
-searchBoxElement.addEventListener('onkeyup', myFunction);
+
+
+// graph for Langa
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+
+        
+        labels: ['1', '2', '3', '4', '5'],
+
+        datasets: [
+
+            {
+                label: '# of Langa',
+                data: arr2,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+
+                ],
+                borderWidth: 1
+            },
+
+        ],
+
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+//khayelisha graph
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+
+        labels: ['1', '2', '3', '4', '5'],
+
+        datasets: [
+                {
+                    label: '# of Khayelisha',
+                    data: arr3,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+
+                    ],
+                    borderWidth: 1
+                }
+        ],
+
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});

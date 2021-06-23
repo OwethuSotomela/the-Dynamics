@@ -28,17 +28,47 @@ var areaList = [ {
   }
   ];
 
-  // var gugx = ["500","400","300","700","250",];
-  function list() {
-    return areaList;
-  }
-  // function gugxList() {
-  //   return gugx;
-  // }
-  
-  return{
-      list,
-      // gugxList,
+
+
+
+  function list(){
+      return areaList;
   }
 
+  var eachList = [ {
+    Area: "Gugulethu",
+    Level1: "500",
+    Level2: "400",
+    Level3: "300",
+    Level4: "700",
+    Level5: "250",
+  
+  },
+  {
+    Area: "Langa",
+    Level1: "250",
+    Level2: "400",
+    Level3: "300",
+    Level4: "700",
+    Level5: "250",
+  },
+  
+  {
+    Area: "Khayelitsha",
+    Level1: "500",
+    Level2: "400",
+    Level3: "300",
+    Level4: "700",
+    Level5: "250",
+  
+  }
+  ];
+  function byarea(){
+    return eachList;
+}
+
+  return{
+      list,
+      byarea,
+  }
 }
