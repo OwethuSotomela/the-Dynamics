@@ -2,11 +2,11 @@ function theList() {
   let passedValue = undefined
   var areaList = [{
     Area: "Gugulethu",
-    Level_1: 500,
-    Level_2: 100,
-    Level_3: 310,
-    Level_4: 700,
-    Level_5: 202,
+    Level_1: 1000,
+    Level_2: 500,
+    Level_3: 450,
+    Level_4: 350,
+    Level_5: 100,
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
       'rgba(54, 162, 235, 0.2)',
@@ -28,7 +28,7 @@ function theList() {
     Level_2: 402,
     Level_3: 302,
     Level_4: 720,
-    Level_5: 222,
+    Level_5: 770,
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
       'rgba(54, 162, 235, 0.2)',
@@ -49,7 +49,7 @@ function theList() {
     Level_1: 507,
     Level_2: 407,
     Level_3: 370,
-    Level_4: 700,
+    Level_4: 300,
     Level_5: 250,
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',

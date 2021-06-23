@@ -38,10 +38,10 @@ function myFunction() {
         }
     }
     var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
+    var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Level-1', 'Level-2', 'Level-3', 'Level-4', 'Level-4', 'Level-5'],
+        labels: ['Level-1', 'Level-2', 'Level-3', 'Level-4', 'Level-5',],
         datasets: mainList.filterGraph()
     },
     options: {
@@ -57,7 +57,7 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Level-1', 'Level-2', 'Level-3', 'Level-4', 'Level-4', 'Level-5'],
+        labels: ['Level-1', 'Level-2', 'Level-3', 'Level-4', 'Level-5',],
         datasets: mainList.filterGraph()
     },
     options: {
