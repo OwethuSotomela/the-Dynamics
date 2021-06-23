@@ -7,24 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="./css/car-accidents-tracker.css">
-    <!-- <script src="https://www.gstatic.com/charts/loader.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
-    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript"></script> -->
 </head>
 
 <body>
 
     <div class="allData">
-        <h2>Cars Accident Tracker During Lockdown Regulations:</h2>
-        <label for="search">Search:</label>
-        <input type="text" placeholder="Search for areas..." class="searchBox" id="searchBox" onkeyup="myFunction()">
-
+        <center>
+          <div class="head"><h2>Car Accident Tracker During Lockdown Regulations:</h2></div>
+        </center>
         <br>
         <br>
+        <div class="searchHere">
+            <strong><em><label for="search">Search:</label></em></strong>
+            <input type="text" placeholder="Please search by area eg; Gugulethu or Pinelands." class="searchBox"
+                id="searchBox" onkeyup="myFunction()">
+        </div>
         <br>
-        
-        <table class="table" id="myTable" style="width:100%">
+        <div class="d" style="text-align:center;">
+            <table id="myTable" class="center" style="width:95%; " >
                 <thead>
                     <tr>
                         <th>Area</th>
@@ -36,19 +37,21 @@
                     </tr>
                 </thead>
                 <tbody class="tableBody">
-                   
+
                 </tbody>
-        </table>
-        <br>
-       <center><strong><em><tcaptions id="tableCaption">(2020 data detailing car accidents due to alcohol during different South African lockdown levels).</tcaptions></em></strong></center>
-        <br>
-        <!-- <div id="myChart" style="max-width:700px; height:400px"></div> -->
-
-        <div class="chartCovid">
-            <canvas id="myChart" ></canvas>
+            </table>
         </div>
-        <!-- <div id="chart_div"></div> -->
-
+        <br>
+        <center><strong><em>
+                    <tcaptions id="tableCaption">(2020 Data detailing car accidents due to alcohol during different
+                        South
+                        African lockdown levels).</tcaptions>
+                </em></strong></center>
+        <br>
+        <br>
+        <div class="myChart">
+            <canvas id="myChart"></canvas>
+        </div>
     </div>
 
     <script src="./js/area-list.js"></script>

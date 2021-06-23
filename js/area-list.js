@@ -1,11 +1,12 @@
 function theList() {
+
   let passedValue = undefined
   var areaList = [{
     Area: "Gugulethu",
     Level_1: 1000,
     Level_2: 500,
-    Level_3: 450,
-    Level_4: 350,
+    Level_3: 420,
+    Level_4: 700,
     Level_5: 100,
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
@@ -72,7 +73,7 @@ function theList() {
   }
   function filterGraph() {
     const arrayData = []
-    if (passedValue == undefined){
+    if (passedValue == undefined) {
       const onData = areaList.filter(data => {
         arrayData.push({
           label: data.Area,
@@ -84,9 +85,9 @@ function theList() {
         return true;
       })
       return arrayData;
-    } else{
+    } else {
       const onData = areaList.filter(data => {
-        if(data.Area.includes(passedValue)){
+        if (data.Area.includes(passedValue)) {
           arrayData.push({
             label: data.Area,
             data: [data.Level_1, data.Level_2, data.Level_3, data.Level_4, data.Level_5],
@@ -100,10 +101,10 @@ function theList() {
       return arrayData;
     }
   }
-  function setPassedValue(name){
+  function setPassedValue(name) {
     passedValue = name.toUpperCase()
   }
-  function getPas(){
+  function getPas() {
     return passedValue
   }
   return {
@@ -191,7 +192,7 @@ function theList() {
 //     "Level-3": "300",
 //     "Level-4": "700",
 //     "Level-5": "250",
-  
+
 //   },
 //   {
 //     "Area": "Langa",
@@ -201,7 +202,7 @@ function theList() {
 //     "Level-4": "700",
 //     "Level-5": "250",
 //   },
-  
+
 //   {
 //     "Area": "Khayelitsha",
 //     "Level-1": "500",
@@ -209,7 +210,7 @@ function theList() {
 //     "Level-3": "300",
 //     "Level-4": "700",
 //     "Level-5": "250",
-  
+
 //   }
 //   ];
 
@@ -227,7 +228,7 @@ function theList() {
 //     Level3: "300",
 //     Level4: "700",
 //     Level5: "250",
-  
+
 //   },
 //   {
 //     Area: "Langa",
@@ -237,7 +238,7 @@ function theList() {
 //     Level4: "700",
 //     Level5: "250",
 //   },
-  
+
 //   {
 //     Area: "Khayelitsha",
 //     Level1: "500",
@@ -245,7 +246,7 @@ function theList() {
 //     Level3: "300",
 //     Level4: "700",
 //     Level5: "250",
-  
+
 //   }
 //   ];
 //   function byarea(){
