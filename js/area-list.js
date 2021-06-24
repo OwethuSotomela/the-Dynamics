@@ -3,11 +3,17 @@ function theList() {
   let passedValue = undefined
   var areaList = [{
     Area: "Gugulethu",
+    
     Level_1: 1000,
     Level_2: 500,
     Level_3: 420,
     Level_4: 700,
     Level_5: 100,
+
+    levelData : function() {
+      return [this.Level_1, this.Level_2, this.Level_3, this.Level_4, this.Level_5] 
+    },
+
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
       'rgba(54, 162, 235, 0.2)',
@@ -30,6 +36,9 @@ function theList() {
     Level_3: 302,
     Level_4: 720,
     Level_5: 770,
+    levelData : function() {
+      return [this.Level_1, this.Level_2, this.Level_3, this.Level_4, this.Level_5] 
+    },
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
       'rgba(54, 162, 235, 0.2)',
@@ -52,6 +61,9 @@ function theList() {
     Level_3: 370,
     Level_4: 300,
     Level_5: 250,
+    levelData : function() {
+      return [this.Level_1, this.Level_2, this.Level_3, this.Level_4, this.Level_5] 
+    },
     backgroundColor: [
       'rgba(255, 99, 132, 0.2)',
       'rgba(54, 162, 235, 0.2)',
@@ -77,7 +89,7 @@ function theList() {
       const onData = areaList.filter(data => {
         arrayData.push({
           label: data.Area,
-          data: [data.Level_1, data.Level_2, data.Level_3, data.Level_4, data.Level_5],
+          data: data.levelData(), //[data.Level_1, data.Level_2, data.Level_3, data.Level_4, data.Level_5],
           backgroundColor: data.backgroundColor,
           borderColor: data.borderColor,
           borderWidth: 1
@@ -90,7 +102,7 @@ function theList() {
         if (data.Area.includes(passedValue)) {
           arrayData.push({
             label: data.Area,
-            data: [data.Level_1, data.Level_2, data.Level_3, data.Level_4, data.Level_5],
+            data: data.levelData(), // [data.Level_1, data.Level_2, data.Level_3, data.Level_4, data.Level_5],
             backgroundColor: data.backgroundColor,
             borderColor: data.borderColor,
             borderWidth: 1

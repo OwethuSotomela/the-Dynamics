@@ -7,17 +7,28 @@ const updateLevel = (ev) => {
     }
     mainList.updateAccidentLevel(params.area, params.level, params.qty);
     showAccidentTable(mainList.list());
-    /*
-    list.push(movie);
-    document.forms[0].reset(); // to clear the form for the next entries
-    //document.querySelector('form').reset();
-    //for display purposes only
-    console.warn('added', { list });
-    let pre = document.querySelector('#msg pre');
-    pre.textContent = '\n' + JSON.stringify(list, '\t', 2);
-    //saving to localStorage
-    localStorage.setItem('MyMovieList', JSON.stringify(list));
-    */
+
+    // get the newly updated data from the Factory Function
+    const newAreaData = mainList.filterGraph();
+
+    accidentGraph.data.datasets.forEach(function(areaData, index){
+        
+        // remove all the graphs datasets
+        while(areaData.data.length > 0) {	
+            areaData.data.pop();
+        }
+
+        // put the data back for each dataset
+        newAreaData[index].data.forEach(function(level){
+            areaData.data.push(Number(level));
+        })
+
+    });
+
+    // ...
+    accidentGraph.update();
+
+
 }
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btn').addEventListener('click', updateLevel);

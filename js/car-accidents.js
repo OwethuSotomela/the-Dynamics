@@ -43,7 +43,7 @@ function myFunction() {
 searchBoxElement.addEventListener('onkeyup', myFunction);
 function drawGraphs() {
     var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
+    return new Chart(ctx, {
         type: 'line',
         data: {
             labels: ['Level-1', 'Level-2', 'Level-3', 'Level-4', 'Level-5',],
@@ -58,4 +58,22 @@ function drawGraphs() {
         }
     });
 }
-drawGraphs();
+
+const accidentGraph = drawGraphs();
+
+document.querySelector('.showAccidentAdmin').addEventListener('click', function(evt){
+
+    evt.preventDefault();
+    document.querySelector('.showAccidentAdmin').classList.toggle('hidden');
+    document.querySelector('.accidentAdmin').classList.toggle('hidden');
+
+});
+
+document.querySelector('.accidentAdmin').addEventListener('click', function(evt){
+    
+    evt.preventDefault();
+    document.querySelector('.showAccidentAdmin').classList.toggle('hidden');
+    document.querySelector('.accidentAdmin').classList.toggle('hidden');
+    
+});
+
