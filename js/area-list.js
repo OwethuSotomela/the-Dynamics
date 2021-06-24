@@ -71,6 +71,7 @@ function theList() {
   function list() {
     return areaList;
   }
+
   function filterGraph() {
     const arrayData = []
     if (passedValue == undefined) {
