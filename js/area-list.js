@@ -1,5 +1,5 @@
-function theList() {
 
+function theList() {
   let passedValue = undefined
   var areaList = [{
     Area: "Gugulethu",
@@ -71,7 +71,6 @@ function theList() {
   function list() {
     return areaList;
   }
-
   function filterGraph() {
     const arrayData = []
     if (passedValue == undefined) {
@@ -108,83 +107,23 @@ function theList() {
   function getPas() {
     return passedValue
   }
+  function updateAccidentLevel(area, level, qty) {
+    console.log(arguments);
+    const theArea = areaList.find(function(currentArea) {
+      return currentArea.Area === area;
+    });
+    if (theArea) {
+      theArea[level] += Number(qty);
+    }
+  }
   return {
     list,
     getPas,
     filterGraph,
-    setPassedValue
+    setPassedValue,
+    updateAccidentLevel
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // function theList(){
 // var areaList = [ {
 //     "Area": "Gugulethu",
@@ -193,7 +132,6 @@ function theList() {
 //     "Level-3": "300",
 //     "Level-4": "700",
 //     "Level-5": "250",
-
 //   },
 //   {
 //     "Area": "Langa",
@@ -203,7 +141,6 @@ function theList() {
 //     "Level-4": "700",
 //     "Level-5": "250",
 //   },
-
 //   {
 //     "Area": "Khayelitsha",
 //     "Level-1": "500",
@@ -211,17 +148,11 @@ function theList() {
 //     "Level-3": "300",
 //     "Level-4": "700",
 //     "Level-5": "250",
-
 //   }
 //   ];
-
-
-
-
 //   function list(){
 //       return areaList;
 //   }
-
 //   var eachList = [ {
 //     Area: "Gugulethu",
 //     Level1: "500",
@@ -229,7 +160,6 @@ function theList() {
 //     Level3: "300",
 //     Level4: "700",
 //     Level5: "250",
-
 //   },
 //   {
 //     Area: "Langa",
@@ -239,7 +169,6 @@ function theList() {
 //     Level4: "700",
 //     Level5: "250",
 //   },
-
 //   {
 //     Area: "Khayelitsha",
 //     Level1: "500",
@@ -247,13 +176,11 @@ function theList() {
 //     Level3: "300",
 //     Level4: "700",
 //     Level5: "250",
-
 //   }
 //   ];
 //   function byarea(){
 //     return eachList;
 // }
-
 //   return{
 //       list,
 //       byarea,

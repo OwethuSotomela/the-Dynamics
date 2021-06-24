@@ -69,4 +69,7 @@ tbody tr.active-row {
   .searchHere{
     text-align: center;
   }
-  
+  .formBox{
+    display: flex;
+    flex-direction: column;
+  }
