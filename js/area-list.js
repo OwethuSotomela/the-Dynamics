@@ -4,10 +4,10 @@ function theList() {
   var areaList = [{
     Area: "Gugulethu",
     
-    Level_1: 1000,
-    Level_2: 500,
-    Level_3: 420,
-    Level_4: 700,
+    Level_1: 500,
+    Level_2: 400,
+    Level_3: 300,
+    Level_4: 250,
     Level_5: 100,
 
     levelData : function() {
@@ -31,11 +31,11 @@ function theList() {
   },
   {
     Area: "Langa",
-    Level_1: 250,
-    Level_2: 402,
-    Level_3: 302,
-    Level_4: 720,
-    Level_5: 770,
+    Level_1: 400,
+    Level_2: 350,
+    Level_3: 288,
+    Level_4: 170,
+    Level_5: 93,
     levelData : function() {
       return [this.Level_1, this.Level_2, this.Level_3, this.Level_4, this.Level_5] 
     },
@@ -58,9 +58,9 @@ function theList() {
     Area: "Khayelitsha",
     Level_1: 507,
     Level_2: 407,
-    Level_3: 370,
-    Level_4: 300,
-    Level_5: 250,
+    Level_3: 235,
+    Level_4: 110,
+    Level_5: 60,
     levelData : function() {
       return [this.Level_1, this.Level_2, this.Level_3, this.Level_4, this.Level_5] 
     },
